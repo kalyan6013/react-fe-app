@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const API ="http://localhost:4000/userData"
+const API ="http://nodebeapp-env.eba-6cquvdie.ap-south-1.elasticbeanstalk.com/userData"
 function User() {
     const [formState, setFormState] = useState(null);
     const [userState, setUserState] = useState([
@@ -42,7 +42,7 @@ function User() {
             };
             const response = await fetch(API,requestOptions);
             const data = await response.json();
-            setUserState((preState)=>[...preState, data.user]);
+            setUserState((preState)=>[...preState, {...formState}]);
             setFormState(null)
         } catch (err) {
             console.log(err)

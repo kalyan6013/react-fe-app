@@ -45,7 +45,7 @@ function User() {
             setUserState((preState)=>[...preState, {...formState}]);
             setFormState(null)
         } catch (err) {
-            console.log(err)
+            console.log("error : ", err)
         }
     }
 
